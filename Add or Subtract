@@ -1,0 +1,10 @@
+unction calculate(str) {
+  str = str.replace(/plus/g, '+');
+  if(/[A-Z]/gi.test(str)){
+    str = str.replace(/minus/g,'-');
+  }
+  str =  eval(str);
+  return str.toString();
+}
+console.log(calculate("1plus2plus3plus4"))
+/*
