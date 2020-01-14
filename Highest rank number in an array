@@ -1,0 +1,27 @@
+/*
+Description:
+Complete the method which returns the number which is most frequent in the given input array. If there is a tie for most frequent number, return the largest number among them.
+
+Note: no empty arrays will be given.
+*/
+function highestRank(arr){
+  arr.sort(function(a,b){return a- b;});
+  var max = 0;
+  var result;
+  var freq = 0;
+  for (var i = 0; i< arr.length; i++){
+    if(arr[i]==arr[i+1]){
+      freq++
+    }else{
+      freq=0;
+    }
+    if(freq>=max){
+      result = arr[i];
+      max = freq
+    }
+  }
+  return result
+//Your Code logic should written here
+}
+ 
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]))
