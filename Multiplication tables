@@ -1,0 +1,31 @@
+/*Create a function that accepts dimensions, of Rows x Columns, as parameters in order to create a 
+multiplication table sized according to the given dimensions. 
+**The return value of the function must be an array, and the numbers must be Fixnums, NOT strings.
+
+Example:
+
+multiplication_table(3,3)
+
+1 2 3
+2 4 6
+3 6 9
+
+-->[[1,2,3],[2,4,6],[3,6,9]]
+
+Each value on the table should be equal to the value of multiplying the 
+number in its first row times the number in its first column.*/
+
+function multiplicationTable(row,col){
+  var arr = new Array(row);
+  if(row == 1){
+    arr[0] = [...Array(col).keys()].map(x => ++x);
+  }
+  
+  for (var i = 1; i < arr.length; i++) { 
+      arr[0] = [...Array(col).keys()].map(x => ++x);
+      arr[i] = [...Array(col).keys()].map(x => (i+1)*(x+1)); 
+  } 
+  return arr;
+}
+ 
+console.log(multiplicationTable(4,4))
